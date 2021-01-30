@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class PassengerTest {
 
-    Passenger Passenger;
+    Passenger passenger;
 
     @Before
     public void before(){
@@ -18,7 +18,7 @@ public class PassengerTest {
 
     @Test
     public void hasNumberOfBags(){
-        Assert.assertEquals(3, passenger.getNumberOfBags());
+        Assert.assertEquals(3, passenger.getBags());
     }
 
 
