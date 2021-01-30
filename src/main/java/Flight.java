@@ -39,4 +39,23 @@ public class Flight {
     public String getDepartureTime() {
         return this.departureTime;
     }
+
+    public int getPassengers() {
+        return passengers.size();
+    }
+
+    public void bookPassenger(Passenger passenger){
+        int flightCapacity = PlaneType.BOEING747.getPlaneCapacity();
+        int numOfPassengers = this.getPassengers();
+
+        if (flightCapacity > numOfPassengers){
+            passengers.add(passenger);
+        }
+    }
+
+    public int getAvailableSeats() {
+        int flightCapacity = PlaneType.BOEING747.getPlaneCapacity();
+        int numOfPassengers = this.getPassengers();
+        return (flightCapacity - numOfPassengers);
+    }
 }

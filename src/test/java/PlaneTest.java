@@ -18,7 +18,7 @@ public class PlaneTest {
 
     @Test
     public void canGetPlaneCapacity(){
-        Assert.assertEquals(410, plane.getPlaneCapacity());
+        Assert.assertEquals(5, plane.getPlaneCapacity());
     }
 
     @Test

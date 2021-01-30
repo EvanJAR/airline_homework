@@ -6,10 +6,12 @@ public class FlightTest {
 
     Flight flight;
     Plane plane;
+    Passenger passenger;
 
     @Before
     public void before(){
         flight = new Flight(plane, "FR890", "AMS", "GLA", "15:35");
+        passenger = new Passenger("Kate McCallister", 3);
     }
 
     @Test
@@ -36,5 +38,36 @@ public class FlightTest {
     public void getFlightDepartureTime(){
         Assert.assertEquals("15:35", flight.getDepartureTime());
     }
+
+    @Test
+    public void listOfPassengersStartsEmpty(){
+        Assert.assertEquals(0, flight.getPassengers());
+    }
+
+    @Test
+    public void canBookPassenger_remainingSeats(){
+        flight.bookPassenger(passenger);
+        Assert.assertEquals(1, flight.getPassengers());
+    }
+
+    @Test
+    public void doesntBookPassenger_noRemainingSeats(){
+        flight.bookPassenger(passenger);
+        flight.bookPassenger(passenger);
+        flight.bookPassenger(passenger);
+        flight.bookPassenger(passenger);
+        flight.bookPassenger(passenger);
+        flight.bookPassenger(passenger);
+        Assert.assertEquals(5, flight.getPassengers());
+    }
+
+    @Test
+    public void canGetAvailableSeats(){
+        flight.bookPassenger(passenger);
+        flight.bookPassenger(passenger);
+        flight.bookPassenger(passenger);
+        Assert.assertEquals(2, flight.getAvailableSeats());
+    }
+
 
 }

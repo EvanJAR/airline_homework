@@ -1,6 +1,6 @@
 public enum PlaneType {
 
-    BOEING747(183_500, 410);
+    BOEING747(183_500, 5);
 
     private final int weight_kgs;
     private final int capacity;
