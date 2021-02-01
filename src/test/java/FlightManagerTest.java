@@ -7,6 +7,7 @@ public class FlightManagerTest {
     FlightManager flightManager;
     Plane plane;
     Flight flight;
+    Passenger passenger;
 
 
     @Before
@@ -14,6 +15,7 @@ public class FlightManagerTest {
         plane = new Plane(PlaneType.BOEING747);
         flight = new Flight(plane, "FR890", "AMS", "GLA", "15:35");
         flightManager = new FlightManager(plane, flight);
+        passenger = new Passenger("Kate McCallister", 3);
     }
 
 
@@ -26,6 +28,14 @@ public class FlightManagerTest {
     public void canCalculateBaggageWeightForEachPassenger(){
         Assert.assertEquals(18, flightManager.weightForEachPassenger(plane), 0);
     }
+
+    @Test
+    public void canCalculateHowMuchWeightIsBooked(){
+        flight.bookPassenger(passenger);
+        Assert.assertEquals(18, flightManager.weightBooked(flight), 0);
+    }
+
+
 
 
 
