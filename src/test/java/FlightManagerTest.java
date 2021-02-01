@@ -35,7 +35,11 @@ public class FlightManagerTest {
         Assert.assertEquals(18, flightManager.weightBooked(flight), 0);
     }
 
-
+    @Test
+    public void canCalculateHowMuchReservedWeightIsLeft(){
+        flight.bookPassenger(passenger);
+        Assert.assertEquals(72, flightManager.reservedWeightLeft(flight), 0);
+    }
 
 
 

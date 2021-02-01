@@ -24,4 +24,10 @@ public class FlightManager {
         double weightForEachPassenger = weightForEachPassenger(plane);
         return numOfPassengers * weightForEachPassenger;
     }
+
+    public double reservedWeightLeft(Flight flight){
+        double weightBooked = weightBooked(flight);
+        double totalWeightReserved = totalWeightReservedForPassengers(plane);
+        return (totalWeightReserved - weightBooked);
+    }
 }
