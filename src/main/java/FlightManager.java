@@ -13,4 +13,9 @@ public class FlightManager {
        return (totalPlaneWeight / 2);
     }
 
+    public double weightForEachPassenger(Plane plane) {
+        int flightCapacity = plane.getPlaneCapacity();
+        double weightForAllPassengers = totalWeightReservedForPassengers(plane);
+        return (weightForAllPassengers / flightCapacity);
+    }
 }

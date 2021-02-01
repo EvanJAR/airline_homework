@@ -11,10 +11,13 @@ public class Plane {
     }
 
     public int getPlaneCapacity() {
-        return this.planeType.getPlaneCapacity();
+        int planeCapacity = this.planeType.getPlaneCapacity();
+        return planeCapacity;
+
     }
     public int getPlaneWeight(){
-        return this.planeType.getPlaneWeight();
+        int planeWeight = this.planeType.getPlaneWeight();
+        return planeWeight;
     }
 
 }

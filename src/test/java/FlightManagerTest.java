@@ -22,10 +22,10 @@ public class FlightManagerTest {
         Assert.assertEquals(90, flightManager.totalWeightReservedForPassengers(plane), 0);
     }
 
-//    @Test
-//    public void canCalculateBaggageWeightForEachPassenger(){
-//        Assert.assertEquals(18.3, flightManager.weightForEachPassenger());
-//    }
+    @Test
+    public void canCalculateBaggageWeightForEachPassenger(){
+        Assert.assertEquals(18, flightManager.weightForEachPassenger(plane), 0);
+    }
 
 
 
